@@ -14,7 +14,7 @@ class _MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<_MyStatefulWidget> {
-  String _buttonState;
+  String _buttonState = 'OFF'; // = 'OFF' null safety정책으로 선언하지 않으면 에러나는듯
 
   @override
   void initState() {
@@ -33,7 +33,7 @@ class _MyStatefulWidgetState extends State<_MyStatefulWidget> {
     print('build() 호출됨');
     return Column(
       children: <Widget>[
-        RaisedButton(
+        ElevatedButton(                 // RaisedButton은 더이상 사용하지 않고 ElevatedButton으로 바뀜
           child: Text('버튼을 누르세요'),
           onPressed: _onClick,
         ),
